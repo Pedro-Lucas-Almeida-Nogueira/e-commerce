@@ -1,0 +1,42 @@
+# --- Python ---
+*.py[cod]
+__pycache__/
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+
+# --- Ambientes Virtuais ---
+venv/
+.venv/
+env/
+ENV/
+bin/
+
+# --- Django ---
+*.log
+db.sqlite3
+media/
+# Opcional: ignorar arquivos de migração iniciais
+# !/path/to/app/migrations/__init__.py
+
+# --- Configurações/Secrets ---
+.env
+local_settings.py
+
+# --- IDEs/Editores ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Outros ---
+.DS_Store
+.pytest_cache/
+htmlcov/
