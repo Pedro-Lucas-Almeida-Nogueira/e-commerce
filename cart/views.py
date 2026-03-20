@@ -1,4 +1,4 @@
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .models import Cart, CartItem
 from .serializers import CartSerializer, CartItemSerializer
 
@@ -24,4 +24,12 @@ class CartItemListCreateView(ListCreateAPIView):
     def perform_create(self, serializer):
         cart = Cart.objects.get(user=self.request.user)
         serializer.save(cart= cart)
+
+
+class CartItemDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = CartItem.objects.all()
+    serializer_class = CartItemSerializer
+
+    def get_queryset(self):
+        return CartItem.objects.filter(cart__user=self.request.user)
          
