@@ -4,7 +4,6 @@ from .serializers import CartSerializer, CartItemSerializer
 
 
 class CartListCreateView(ListCreateAPIView):
-    queryset = Cart.objects.all()
     serializer_class = CartSerializer
 
     def get_queryset(self):
@@ -15,7 +14,6 @@ class CartListCreateView(ListCreateAPIView):
 
 
 class CartItemListCreateView(ListCreateAPIView):
-    queryset = CartItem.objects.all()
     serializer_class = CartItemSerializer
 
     def get_queryset(self):
@@ -27,7 +25,6 @@ class CartItemListCreateView(ListCreateAPIView):
 
 
 class CartItemDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = CartItem.objects.all()
     serializer_class = CartItemSerializer
 
     def get_queryset(self):
